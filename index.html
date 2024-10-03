@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semaphore Simulation</title>
+    <link rel="stylesheet" href="./sytle.css">
+</head>
+<body>
+    <h2>Read-Write Semaphore Simulation</h2>
+    <table>
+        <tr>
+            <td>
+                <h3>Reader Settings</h3>
+                <div>
+                    <label>Start Time(s)</label>
+                    <input type="number" id="readerStartTime">
+                </div>
+                <div>
+                    <label>Duration(s)</label>
+                    <input type="number" id="readerDuration">
+                </div>
+                <button onclick="addReader()">Add Reader</button>
+            </td>
+            <td>
+                <h3>Writer Settings</h3>
+                <div>
+                    <label>Start Time(s)</label>
+                    <input type="number" id="writerStartTime">
+                </div>
+                <div>
+                    <label>Duration(s)</label>
+                    <input type="number" id="writerDuration">
+                </div>
+                <button onclick="addWriter()">Add Writer</button>
+            </td>
+        </tr>
+    </table>
+
+    <table id="processTable">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Processes</th>
+                <th>Start Time(s)</th>
+                <th>Duration(s)</th>
+            </tr>
+        </thead>
+        <tbody id="processList">
+        </tbody>
+    </table>
+
+    <button onclick="startProcesses()">Start Processes</button>
+    <button onclick="clearProcesses()">Clear All Processes</button>
+
+    <table id="queueTable">
+        <thead>
+            <tr>
+                <th>Waiting Processes</th>
+                <th>Running Processes</th>
+                <th>Finished Processes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="waitingProcesses"></td>
+                <td id="runningProcesses"></td>
+                <td id="finishedProcesses"></td>
+            </tr>
+        </tbody>
+    </table>        
+    <script src="./test.js"></script>
+</body>
+</html>
